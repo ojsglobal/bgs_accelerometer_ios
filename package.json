@@ -1,0 +1,28 @@
+{
+  "name": "bgaccelerometer",
+  "version": "1.0.0",
+  "description": "Run accelerometer in background using corelocation services",
+  "cordova": {
+    "id": "com.dotsquares.bgaccelerometer",
+    "platforms": [
+      "ios"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sumitshastri/bgaccelerometer.git"
+  },
+  "keywords": [
+    "accelerometer",
+    "background",
+    "Run accelerometer in background",
+    "ecosystem:cordova",
+    "cordova-ios"
+  ],
+  "author": "SUMIT",
+  "license": "Apache 2.0",
+  "bugs": {
+    "url": "https://github.com/sumitshastri/bgaccelerometer/issues"
+  },
+  "homepage": "https://github.com/sumitshastri/bgaccelerometer#readme"
+}

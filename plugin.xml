@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="com.dotsquares.bgaccelerometer"
+    version="0.1.0">
+    <name>bgaccelerometer</name>
+    <description>Run accelerometer in background using corelocation services</description>
+    <license>Apache 2.0</license>
+    <keywords>accelerometer,background,Run accelerometer in background</keywords>
+    <!--    <repo>git@git.wnyc.net:mobile/cordova/cordova-plugin-hockeyapp.git</repo>-->
+    
+    <js-module src="www/bgaccelerometer.js" name="bgaccelerometer">
+        <clobbers target="bgaccelerometer"/>
+    </js-module>
+    
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="bgaccelerometer">
+                <param name="ios-package" value="bgaccelerometer" />
+                <param name="onload" value="true" />
+            </feature>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSLocationWhenInUseUsageDescription">
+            <string></string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="NSLocationAlwaysUsageDescription">
+            <string>Your location is needed for this app.</string>
+        </config-file>
+        <config-file target="*-Info.plist" parent="UIBackgroundModes">
+            <array>
+                <string>fetch</string>
+                <string>location</string>
+            </array>
+        </config-file>
+        
+        <!--        <dependency id="org.nypr.cordova.nslogger-cocoalumberjack-connector-plugin" url="https://github.com/wnyc/cordova-plugin-nslogger-cocoalumberjack-connector.git"  />-->
+        
+        <header-file src="src/ios/bgaccelerometer.h" />
+        <source-file src="src/ios/bgaccelerometer.m" />
+        
+        <header-file src="src/ios/BackgroundTaskManager.h" />
+        <source-file src="src/ios/BackgroundTaskManager.m" />
+        
+        <header-file src="src/ios/LocationTracker.h" />
+        <source-file src="src/ios/LocationTracker.m" />
+        
+        <header-file src="src/ios/MotionTracker.h" />
+        <source-file src="src/ios/MotionTracker.m" />
+        
+        <header-file src="src/ios/LocationShareModel.h" />
+        <source-file src="src/ios/LocationShareModel.m" />
+        
+        <header-file src="src/ios/CDVCoredataPlugin.h" />
+        <source-file src="src/ios/CDVCoredataPlugin.m" />
+        
+        <header-file src="src/ios/Database/AccelData.h" />
+        <source-file src="src/ios/Database/AccelData.m" />
+        
+        <header-file src="src/ios/Database/ConfigData.h" />
+        <source-file src="src/ios/Database/ConfigData.m" />
+        <resource-file src="src/ios/Database/PluginAppDB.xcdatamodeld" />
+        <resource-file src="src/ios/Database/PluginAppDB.xcdatamodel" />
+        
+        <!--        <resource-file src="src/ios/HockeySDK.embeddedframework/Resources/HockeySDKResources.bundle" />-->
+        <!--        <resource-file src="src/ios/HockeySDK.embeddedframework/Resources/HockeySDK.xcconfig" />-->
+        
+        <!--        <framework src="src/ios/HockeySDK.embeddedframework/HockeySDK.framework" custom="true"/>-->
+        <framework src="CoreData.framework" />
+        <framework src="CoreMotion.framework" />
+        <framework src="AssetsLibrary.framework" />
+        <framework src="CoreGraphics.framework" />
+        <framework src="Foundation.framework" />
+        <framework src="MobileCoreServices.framework" />
+        <framework src="CoreLocation.framework" />
+    </platform>
+</plugin>
