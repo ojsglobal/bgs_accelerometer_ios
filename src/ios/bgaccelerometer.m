@@ -62,8 +62,8 @@ BOOL isStopUpdateLocation;
             pollPeriod= [[dicValue valueForKey:@"pollPeriod"] integerValue];
             daysToKeep= [[dicValue valueForKey:@"daysToKeep"] integerValue];
             
-            UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@" Default configuration set successfully. Please start." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
-            [alert show];
+            //UIAlertView *alert=[[UIAlertView alloc]initWithTitle:@"" message:@" Default configuration set successfully. Please start." delegate:nil cancelButtonTitle:nil otherButtonTitles:@"Ok", nil];
+            //[alert show];
         }
     }
         
@@ -144,7 +144,7 @@ BOOL isStopUpdateLocation;
 //    else{
         NSMutableDictionary *lastLocation1  = [[NSMutableDictionary alloc] init];
         [lastLocation1 setValue:@"2.0" forKey:@"pollPeriod"];
-        [lastLocation1 setValue:@"5.0" forKey:@"daysToKeep"];
+        [lastLocation1 setValue:@"20.0" forKey:@"daysToKeep"];
         [listArray  addObject:lastLocation1];
 //    }
     [self setConfig:nil];
@@ -288,7 +288,7 @@ BOOL isStopUpdateLocation;
     UIAlertView * alert;
     if([[UIApplication sharedApplication] backgroundRefreshStatus] == UIBackgroundRefreshStatusDenied){
         alert = [[UIAlertView alloc]initWithTitle:@""
-                                          message:@"The app doesn't work without the Background App Refresh enabled. To turn it on, go to Settings > General > Background App Refresh"
+                                          message:@"Healthia will not work correctly without enabling Background App Refresh. Go to Settings > General > Background App Refresh"
                                          delegate:nil
                                 cancelButtonTitle:@"Ok"
                                 otherButtonTitles:nil, nil];
@@ -297,7 +297,7 @@ BOOL isStopUpdateLocation;
     }else if([[UIApplication sharedApplication] backgroundRefreshStatus] == UIBackgroundRefreshStatusRestricted){
         
         alert = [[UIAlertView alloc]initWithTitle:@""
-                                          message:@"The functions of this app are limited because the Background App Refresh is disable."
+                                          message:@"Healthia will not work correctly without enabling Background App Refresh. Go to Settings > General > Background App Refresh"
                                          delegate:nil
                                 cancelButtonTitle:@"Ok"
                                 otherButtonTitles:nil, nil];
