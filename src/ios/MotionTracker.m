@@ -95,7 +95,7 @@ static CMMotionManager *motionManager;
     intMillisecondCount++;
     NSLog(@"outputAccelertionData :%d", intMillisecondCount);
     
-    CGFloat strength = 1.2f;
+    CGFloat strength = 2.0f;
     daysToKeep =[self fetchConfigData];
     AccelData * accelData=[self fetchOnlySingleAccelData];
     
