@@ -95,7 +95,8 @@ static CMMotionManager *motionManager;
     intMillisecondCount++;
     NSLog(@"outputAccelertionData :%d", intMillisecondCount);
     
-    CGFloat strength = 1.8f;
+    //THIS SEEMS TO BE THE SENSITIVITY OF THE STEP COUNTING
+    CGFloat strength = 1.5f;
     daysToKeep =[self fetchConfigData];
     AccelData * accelData=[self fetchOnlySingleAccelData];
     
